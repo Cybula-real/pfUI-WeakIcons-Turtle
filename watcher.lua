@@ -95,7 +95,7 @@ function watcher:fetch(name, unit)
             end
         end
     elseif unit == "target" then
-        for i=1,32 do
+        for i=1,64 do
             if self.targetdebuffs[i][3] == name then
                 return self.targetdebuffs[i]
             end
