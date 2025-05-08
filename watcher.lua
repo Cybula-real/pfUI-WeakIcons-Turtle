@@ -30,7 +30,7 @@ for i=1,32 do
     watcher.playerbuffs[i] = {}
 end
 watcher.targetdebuffs = {}
-for i=1,32 do
+for i=1,64 do
     watcher.targetdebuffs[i] = {}
 end
 
@@ -57,8 +57,10 @@ watcher:SetScript("OnUpdate", function()
             this.playerbuffs[i][4] = nil
             this.playerbuffs[i][5] = 0
         end
+    end
 
-        -- Check debuff slots
+    --Check Debuffs
+    for i=1,64 do
         texture, name, timeleft, stacks = GetBuffData("target", i, "HARMFUL")
         timeleft = timeleft or 0
         if texture and name and name ~= "" then
