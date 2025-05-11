@@ -103,7 +103,7 @@ function watcher:fetch(name, unit)
             end
         end
         -- Check buff slots for debuffs when debuff slots are full
-        for i=1,32 do
+        for i=1,64 do
             local texture, buffName, timeleft, stacks = GetBuffData("target", i, "HELPFUL")
             if buffName == name then
                 return {timeleft, i, buffName, texture, stacks}
